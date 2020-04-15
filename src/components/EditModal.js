@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {View, StyleSheet, TextInput, Button, Modal, Alert} from 'react-native'
-import {THEME} from './theme'
+import {THEME} from '../theme'
 
 export const EditModal = ({ visible, onCancel, value, onSave }) => {
     const [title, setTitle] = useState(value)
@@ -13,6 +13,11 @@ export const EditModal = ({ visible, onCancel, value, onSave }) => {
         }
     }
 
+    const cancelHandler = () => {
+        setTitle(value)
+        onCancel()
+    }
+
     return (
         <Modal visible={visible} animationType='slide'>
             <View style={styles.wrap}>
@@ -23,7 +28,7 @@ export const EditModal = ({ visible, onCancel, value, onSave }) => {
                     onChangeText={setTitle}
                 />
                 <View style={styles.buttons}>
-                    <Button color={THEME.DANGER_COLOR} title="Cancel" onPress={onCancel} />
+                    <Button color={THEME.DANGER_COLOR} title="Cancel" onPress={cancelHandler} />
                     <Button title="Save" onPress={saveHandler} />
                 </View>
                 
