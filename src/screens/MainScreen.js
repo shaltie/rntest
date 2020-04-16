@@ -8,7 +8,7 @@ import { AppLoader } from '../components/ui/AppLoader'
 import { AppButton } from '../components/ui/AppButton'
 
 export const MainScreen = () => {
-    const {addTodo, todos, removeTodo, fetchTodos, loading, error} = useContext(TodoContext)
+    const {addTodo, todos, applyLike, applyDislike, fetchTodos, loading, error} = useContext(TodoContext)
     const {changeScreen} = useContext(ScreenContext)
 
     // todo understand this hook useCallback
@@ -33,7 +33,7 @@ export const MainScreen = () => {
         <FlatList 
                 keyExtractor={item => item.id.toString()}
                 data={todos}
-                renderItem={({item}) => <Todo todo={item} onRemove={removeTodo} onOpen={changeScreen} />}
+                renderItem={({item}) => <Todo todo={item} onOpen={changeScreen} onLike={applyLike} onDislike={applyDislike} />}
             />
     )
     if(todos.length === 0){
@@ -43,7 +43,6 @@ export const MainScreen = () => {
     }
     return (
         <View >
-            <AddTodo onSubmit={addTodo} />
             {content}
         </View>
     )

@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#fac',
       alignItems: 'center',
       justifyContent: 'center',
-      paddingHorizontal: 10,
-      paddingVertical: 10
+      paddingHorizontal: 0,
+      paddingVertical: 0
     }
   });

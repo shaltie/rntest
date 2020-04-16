@@ -1,11 +1,15 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {View, StyleSheet} from 'react-native'
 import {AppTextBold} from './ui/AppTextBold'
+import { AddTodo } from './AddTodo'
+import {TodoContext} from '../context/todo/todoContext'
 
 export const Navbar = (props) => {
+    const {addTodo} = useContext(TodoContext)
+
     return (
         <View style={styles.navbar}> 
-            <AppTextBold style={styles.text}>Inmost</AppTextBold>
+            <AddTodo onSubmit={addTodo} />
         </View>
     )
 }
@@ -16,7 +20,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-end',
         backgroundColor: '#faa',
-        paddingBottom: 10
+        paddingBottom: 10,
+        paddingTop: 0
     },
     text: {
         color: '#fff'
