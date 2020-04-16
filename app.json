@@ -1,17 +1,16 @@
 {
   "expo": {
-    "name": "rntest",
-    "slug": "rntest",
+    "name": "Inmost Chat",
+    "slug": "inmost-chat",
     "platforms": [
       "ios",
-      "android",
-      "web"
+      "android"
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/nastolki.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/nastolki.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -22,7 +21,16 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.fckinsky.inmostchat",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.fckinsky.inmostchat",
+      "versionCode": 1,
+      "permissions": [
+        "VIBRATE"
+      ]
     }
   }
 }

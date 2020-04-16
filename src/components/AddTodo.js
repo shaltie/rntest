@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import {StyleSheet, Text, View, TextInput, Button, Alert, Keyboard} from 'react-native'
-import {AntDesign} from '@expo/vector-icons'
 
 export const AddTodo = ({onSubmit}) => {
     const [value, setValue] = useState('')
@@ -11,7 +10,11 @@ export const AddTodo = ({onSubmit}) => {
             setValue('')
             Keyboard.dismiss()
         }else{
-            Alert.alert('Empty value')
+            Alert.alert('Empty value','Understand?', [
+                {
+                  text: 'Yes'
+                },
+              ])
         }
     }
     return (
@@ -21,9 +24,11 @@ export const AddTodo = ({onSubmit}) => {
                 onChangeText={text=> setValue(text)}
                 value={value}
                 maxLength={110}
+                onSubmitEditing={pressHandler}
                 placeholder="Type something"
+                placeholderTextColor={'#0a68da'}
                 />
-                <AntDesign.Button style={styles.button} name="pluscircleo" onPress={pressHandler}>Run</AntDesign.Button>
+                <Button style={styles.button} onPress={pressHandler} title={'Run'}></Button>
         </View>
     )
 }
@@ -40,16 +45,19 @@ const styles =StyleSheet.create({
     input: {
         width: '60%',
         borderStyle: 'solid',
-        borderWidth: 0,
-        backgroundColor: '#fff',
+        borderTopWidth: 0,
+        borderLeftWidth: 0,
+        borderRightWidth: 0,
+        borderBottomWidth: 0,
         borderTopColor: '#ffa',
-        borderBottomColor: '#eee',
+        borderBottomColor: '#4cf',
         color: '#000',
         marginLeft: 20,
         marginRight: 5,
         padding: 3
     },
     button: {
-        marginRight: 20
+        marginRight: 20,
+        paddingHorizontal: 40
     }
 })

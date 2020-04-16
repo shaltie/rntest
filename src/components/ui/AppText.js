@@ -5,6 +5,7 @@ export const AppText = props => <Text style={{...styles.default, ...props.style,
 
 const styles = StyleSheet.create({
     default: {
-        fontFamily: 'roboto-regular'
+        fontFamily: 'roboto-regular',
+        textAlign: 'center'
     }
 })
