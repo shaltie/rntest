@@ -16,11 +16,11 @@ export const Navbar = (props) => {
 
 const styles = StyleSheet.create({
     navbar: {
-        height: 70,
+        height: 75,
         alignItems: 'center',
         justifyContent: 'flex-end',
         backgroundColor: '#faa',
-        paddingBottom: 10,
+        paddingBottom: 0,
         paddingTop: 0
     },
     text: {
